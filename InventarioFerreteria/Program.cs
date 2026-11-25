@@ -12,6 +12,9 @@ ListarProductos();
 ActualizarProducto(1, "Martillo de uña reforzado", 495.00m, 20);
 ListarProductos();
 
+EliminarProducto(2);
+ListarProductos();
+
 void CrearProducto(string nombre, decimal precio, int stock)
 {
     var nuevo = new Producto
@@ -65,4 +68,27 @@ void ActualizarProducto(int id, string nuevoNombre, decimal nuevoPrecio, int nue
     encontrado.Stock = nuevoStock;
 
     Console.WriteLine($"\n[ACTUALIZADO] ID: {encontrado.Id} | {encontrado.Nombre} | RD${encontrado.Precio} | Stock: {encontrado.Stock}");
+}
+
+void EliminarProducto(int id)
+{
+    Producto? encontrado = null;
+
+    foreach (var p in productos)
+    {
+        if (p.Id == id)
+        {
+            encontrado = p;
+            break;
+        }
+    }
+
+    if (encontrado is null)
+    {
+        Console.WriteLine($"\n[AVISO] No se encontró un producto con ID {id} para eliminar.");
+        return;
+    }
+
+    productos.Remove(encontrado);
+    Console.WriteLine($"\n[ELIMINADO] ID: {encontrado.Id} | {encontrado.Nombre} | RD${encontrado.Precio} | Stock: {encontrado.Stock}");
 }
