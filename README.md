@@ -5,3 +5,4 @@ Desarrollo de un sistema CRUD funcional aplicando Git Flow, ramas feature, hotfi
 - Crear, Listar, Actualizar y Eliminar productos en InventarioFerreteria. 
 - Flujo de ramas: feature/* - - -
 - Pruebas y validacion en qa antes de pasar a main. 
+- Verificacion final de flujo Git Flow completada. 
